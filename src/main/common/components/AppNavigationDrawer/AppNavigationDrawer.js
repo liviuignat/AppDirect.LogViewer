@@ -38,7 +38,7 @@ export default class AppNavigationDrawer extends Component {
         <Divider />
 
         <MenuItem>
-          <Link className={css.AppNavigationDrawer_link} to="/">
+          <Link className={css.AppNavigationDrawer_link} to="/log-viewer">
             Logs
           </Link>
         </MenuItem>

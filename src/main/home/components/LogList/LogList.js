@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {Dialog, FlatButton, CodeEditor} from 'main/common/components';
+import {formatDate} from 'helpers/formatters';
 
 export default class LogList extends Component {
   static propTypes = {
@@ -18,9 +19,26 @@ export default class LogList extends Component {
 
   renderLogRow(log, index) {
     const css = require('./LogList.scss');
+
+    const created = log.created;
+    const subscriptionStatus = log.contentJson && log.contentJson.resource.content.status;
+    const subscriptionUUID = log.contentJson && log.contentJson.resource.uuid;
+    const orderStatus = log.contentJson && log.contentJson.resource.content.order.status;
+
     return (
       <div key={index} className={css.LogRow} onTouchTap={::this.onRowClick(log)}>
-        {log.contentJson && log.contentJson.resource.content.status}
+        <span className={css.label}>
+          {formatDate(created)}
+        </span>:
+        <span className={css.label}>
+          {subscriptionStatus}
+        </span>:
+        <span className={css.label}>
+          {orderStatus}
+        </span>:
+        <span className={css.label}>
+          {subscriptionUUID}
+        </span>
       </div>
     );
   }

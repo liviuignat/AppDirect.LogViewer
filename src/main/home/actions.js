@@ -1,6 +1,6 @@
 import * as actionTypes from './actionTypes';
 
-export function loadLogsAction({type = 'vfitaly', size = 20, page = 0} = {}) {
+export function loadLogsAction({type = 'vfitaly', size = 30, page = 0} = {}) {
   const url = `/logs/search/type?name=${type}&size=${size}&page=${page}`;
   return {
     types: [

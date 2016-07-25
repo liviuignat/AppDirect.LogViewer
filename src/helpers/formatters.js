@@ -5,7 +5,7 @@ export function formatUrl(url) {
   return `${config.app.baseApiUrl}${url}`;
 }
 
-export function formatDate(date, format = 'dddd, Do MMMM YYYY') {
+export function formatDate(date, format = 'HH:mm:ss Do MMMM YYYY') {
   const dt = getDate(date);
   const momentDate = moment(dt);
   return momentDate.format(format);
