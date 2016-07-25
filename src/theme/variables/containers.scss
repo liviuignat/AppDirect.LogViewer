@@ -1,0 +1,41 @@
+@mixin container-relative() {
+  margin: 4px auto;
+}
+
+@mixin container-small() {
+  max-width: 100%;
+  @media #{$screen-sm} {
+    max-width: 360px;
+  }
+}
+
+@mixin container-medium($max-width: 600px) {
+  max-width: 100%;
+  @media #{$screen-sm} {
+    max-width: $max-width;
+  }
+}
+
+@mixin container-large($max-width: 1200px) {
+  max-width: 100%;
+  @media #{$screen-md} {
+    max-width: $max-width;
+  }
+}
+
+@mixin container-spacings($padding: 16px) {
+  padding: $padding;
+}
+
+@mixin clearfix() {
+  display: block;
+
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}

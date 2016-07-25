@@ -1,0 +1,15 @@
+@import '../../../../theme/variables.scss';
+
+.AppNavigationDrawer {
+
+  &>div {
+    z-index: 999;
+  }
+}
+
+.AppNavigationDrawer_link {
+  @include link($color-grey800, none);
+  display: inline-block;
+  height: 50px;
+  width: 100%;
+}

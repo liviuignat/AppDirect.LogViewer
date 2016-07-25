@@ -1,0 +1,7 @@
+@import '../../../../theme/variables.scss';
+
+.HomePage {
+  @include container-spacings();
+  @include container-relative();
+  @include container-large();
+}
