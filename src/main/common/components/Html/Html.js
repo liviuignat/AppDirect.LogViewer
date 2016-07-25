@@ -35,6 +35,8 @@ export default class Html extends Component {
                   rel="stylesheet" type="text/css" charSet="UTF-8"/>
           )}
 
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/codemirror.min.css" rel="stylesheet" type="text/css" />
+
           { Object.keys(assets.styles).length === 0 ? <style dangerouslySetInnerHTML={{__html: require('main/common/components/AppContainer/AppContainer.scss')._style}} /> : null }
         </head>
         <body>

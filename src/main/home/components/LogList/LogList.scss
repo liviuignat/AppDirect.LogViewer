@@ -1,0 +1,12 @@
+@import '../../../../theme/variables.scss';
+
+.LogRow {
+  padding: 8px;
+  background: $color-grey50;
+  border-bottom: 1px solid $color-grey200;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-grey200;
+  }
+}
