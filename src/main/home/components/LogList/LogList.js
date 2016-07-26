@@ -1,12 +1,15 @@
 import React, {Component, PropTypes} from 'react';
-import {Dialog, FlatButton, CodeEditor} from 'main/common/components';
+import {Dialog, FlatButton, CodeEditor, RaisedButton} from 'main/common/components';
 import {formatDate} from 'helpers/formatters';
 
 export default class LogList extends Component {
   static propTypes = {
     logs: PropTypes.array.isRequired,
+    query: PropTypes.object.isRequired,
     isDetailDialogOpen: PropTypes.bool.isRequired,
     selectedLog: PropTypes.object.isRequired,
+    viewMoreLogsAction: PropTypes.func.isRequired,
+    loadLogsAction: PropTypes.func.isRequired,
     toggleLogDetailDialog: PropTypes.func.isRequired
   }
 
@@ -15,6 +18,13 @@ export default class LogList extends Component {
       const {toggleLogDetailDialog} = this.props;
       toggleLogDetailDialog(true, log);
     };
+  }
+
+  onViewMoreLogsClick() {
+    const {query, viewMoreLogsAction, loadLogsAction} = this.props;
+    const newSize = query.size * 2;
+    viewMoreLogsAction(newSize);
+    loadLogsAction({size: newSize});
   }
 
   renderLogRow(log, index) {
@@ -67,6 +77,12 @@ export default class LogList extends Component {
 
           {logs.map((log, index) => ::this.renderLogRow(log, index))}
         </div>
+        <RaisedButton
+          label="Load More"
+          secondary
+          fullWidth
+          onTouchTap={::this.onViewMoreLogsClick}
+        />
 
          <Dialog
           title="Log Detail"

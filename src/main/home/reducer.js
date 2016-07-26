@@ -2,7 +2,7 @@ import * as actionTypes from './actionTypes';
 
 const initialState = {
   logs: [],
-  query: {type: '', size: 20, page: 0},
+  query: {type: '', size: 30, page: 0},
   isDetailDialogOpen: false,
   selectedLog: {}
 };
@@ -14,6 +14,15 @@ export function reducer(state = initialState, action = {}) {
         ...state,
         logs: action.result.logs,
         query: action.result.query
+      };
+
+    case actionTypes.INCREASE_PAGE_SIZE:
+      return {
+        ...state,
+        query: {
+          ...state.query,
+          size: action.result.pageSize
+        }
       };
 
     case actionTypes.TOGGLE_LOG_DETAIL_DIALOG:

@@ -41,6 +41,15 @@ export function toggleLogDetailDialog(isOpen, selectedLog = {}) {
   };
 }
 
+export function viewMoreLogsAction(pageSize) {
+  return {
+    type: actionTypes.INCREASE_PAGE_SIZE,
+    result: {
+      pageSize
+    }
+  };
+}
+
 function tryParseJson(json) {
   try {
     return JSON.parse(json);
