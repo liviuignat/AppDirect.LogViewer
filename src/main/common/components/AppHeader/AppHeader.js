@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import {Link} from 'react-router';
 import {IconButton, SvgIcon} from 'main/common/components';
 
 export default class AppHeader extends Component {
@@ -23,9 +24,9 @@ export default class AppHeader extends Component {
           </IconButton>
         </div>
 
-        <a className={css.AppLogoLink} src="http://www.simscale.com">
+        <Link className={css.AppLogoLink} to="/">
           AppDirect Logs
-        </a>
+        </Link>
       </header>
     );
   }

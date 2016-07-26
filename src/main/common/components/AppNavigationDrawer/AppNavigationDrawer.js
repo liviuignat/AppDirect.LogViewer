@@ -30,7 +30,7 @@ export default class AppNavigationDrawer extends Component {
           <Card>
             <CardMedia
               overlay={<CardTitle subtitle="Guest"/>}>
-              <img src="https://d1qb2nb5cznatu.cloudfront.net/startups/i/39904-dc51fcb38683e0e2e4f323682a817992-medium_jpg.jpg?buster=1428521947" />
+              <img src="https://pbs.twimg.com/profile_images/3430349373/c10e337e41565eff02758d7fa3a85946_400x400.png" />
             </CardMedia>
           </Card>
         </div>
@@ -38,7 +38,7 @@ export default class AppNavigationDrawer extends Component {
         <Divider />
 
         <MenuItem>
-          <Link className={css.AppNavigationDrawer_link} to="/">
+          <Link className={css.AppNavigationDrawer_link} to="/log-viewer">
             Logs
           </Link>
         </MenuItem>

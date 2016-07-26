@@ -1,15 +1,26 @@
 import * as actionTypes from './actionTypes';
 
 const initialState = {
-  welcomeMessage: ''
+  logs: [],
+  query: {type: '', size: 20, page: 0},
+  isDetailDialogOpen: false,
+  selectedLog: {}
 };
 
 export function reducer(state = initialState, action = {}) {
   switch (action.type) {
-    case actionTypes.INIT_HOME_MESSAGE:
+    case actionTypes.LOAD_LOGS_SUCCESS:
       return {
         ...state,
-        welcomeMessage: 'Hello World'
+        logs: action.result.logs,
+        query: action.result.query
+      };
+
+    case actionTypes.TOGGLE_LOG_DETAIL_DIALOG:
+      return {
+        ...state,
+        isDetailDialogOpen: action.result.isOpen,
+        selectedLog: action.result.selectedLog
       };
 
     default:

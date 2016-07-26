@@ -1,14 +1,14 @@
 {
-  "name": "simscale",
-  "description": "simscale demo",
+  "name": "AppDirectLogs",
+  "description": "AppDirectLogs",
   "author": "Liviu Ignat <liviu@ignat.email> (http://github.com/liviuignat)",
   "license": "MIT",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/liviuignat/simscale"
+    "url": "https://github.com/liviuignat/AppDirect.LogViewer"
   },
-  "homepage": "https://github.com/liviuignat/simscale",
+  "homepage": "https://github.com/liviuignat/AppDirect.LogViewer",
   "keywords": [
     "react",
     "universal",
@@ -38,7 +38,8 @@
       "command": "node ./src/web-server.js",
       "env": {
         "NODE_PATH": "./src",
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
+        "PORT": 3100
       }
     },
     "start-local-prod": {

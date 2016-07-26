@@ -7,8 +7,9 @@ import {HomePage} from 'main/home/pages';
 export function getRoutes() {
   return (
     <Route path="/" component={AppContainer}>
-      <IndexRoute component={HomePage} />
+      <IndexRoute component={NotFoundPage} />
 
+      <Route path="/log-viewer" component={HomePage} />
       <Route path="*" component={NotFoundPage} status={404} />
     </Route>
   );
