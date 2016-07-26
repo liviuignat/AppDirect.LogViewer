@@ -5,6 +5,7 @@ export AppFooter from './AppFooter/AppFooter';
 export CodeEditor from './CodeEditor/CodeEditor';
 export DevTools from './DevTools/DevTools';
 export Html from './Html/Html';
+export FormTextField from './FormTextField/FormTextField';
 
 export IconMenu from 'material-ui/lib/menus/icon-menu';
 export MenuItem from 'material-ui/lib/menus/menu-item';

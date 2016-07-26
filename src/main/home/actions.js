@@ -50,6 +50,15 @@ export function viewMoreLogsAction(pageSize) {
   };
 }
 
+export function changeSearchParamAction(type) {
+  return {
+    type: actionTypes.CHANGE_SEARCH_TYPE,
+    result: {
+      type
+    }
+  };
+}
+
 function tryParseJson(json) {
   try {
     return JSON.parse(json);

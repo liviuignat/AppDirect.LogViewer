@@ -25,6 +25,15 @@ export function reducer(state = initialState, action = {}) {
         }
       };
 
+    case actionTypes.CHANGE_SEARCH_TYPE:
+      return {
+        ...state,
+        query: {
+          ...state.query,
+          type: action.result.type
+        }
+      };
+
     case actionTypes.TOGGLE_LOG_DETAIL_DIALOG:
       return {
         ...state,
