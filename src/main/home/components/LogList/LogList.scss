@@ -1,16 +1,43 @@
 @import '../../../../theme/variables.scss';
 
-.LogRow {
-  padding: 8px;
-  background: $color-grey50;
-  border-bottom: 1px solid $color-grey200;
-  cursor: pointer;
+$border: 1px solid $color-grey400;
 
+.LogRow {
+  background: $color-grey50;
+  border-bottom: 1px solid $color-grey400;
+  cursor: pointer;
+  min-height: 32px;
+  display: flex;
+
+  &:nth-child(2n+3) {
+    background: $color-grey100;
+  }
+  &:first-child {
+    background: $color-grey300;
+    border-top: $border;
+  }
   &:hover {
-    background: $color-grey200;
+    background: $color-grey300;
+  }
+
+  .label {
+    padding: 8px;
+    flex: 1;
+    border-right: $border;
+    text-align: center;
+
+    &:first-child {
+      border-left: $border;
+    }
   }
 }
 
-.label {
-  padding: 0 8px;
+.LogHeader {
+  @extend .LogRow;
+  background: $color-grey300;
+
+  .label {
+    font-weight: 600;
+  }
 }
+

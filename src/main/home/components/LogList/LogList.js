@@ -29,13 +29,13 @@ export default class LogList extends Component {
       <div key={index} className={css.LogRow} onTouchTap={::this.onRowClick(log)}>
         <span className={css.label}>
           {formatDate(created)}
-        </span>:
+        </span>
         <span className={css.label}>
           {subscriptionStatus}
-        </span>:
+        </span>
         <span className={css.label}>
           {orderStatus}
-        </span>:
+        </span>
         <span className={css.label}>
           {subscriptionUUID}
         </span>
@@ -50,6 +50,21 @@ export default class LogList extends Component {
     return (
       <div className={css.LogList}>
         <div>
+          <div className={css.LogHeader}>
+            <span className={css.label}>
+              Received Date
+            </span>
+            <span className={css.label}>
+              Subscription status
+            </span>
+            <span className={css.label}>
+              Order Status
+            </span>
+            <span className={css.label}>
+              Subscription uuid
+            </span>
+          </div>
+
           {logs.map((log, index) => ::this.renderLogRow(log, index))}
         </div>
 
