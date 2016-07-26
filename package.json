@@ -38,7 +38,8 @@
       "command": "node ./src/web-server.js",
       "env": {
         "NODE_PATH": "./src",
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
+        "PORT": 3100
       }
     },
     "start-local-prod": {

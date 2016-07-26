@@ -1,9 +1,9 @@
-FROM nodesource/node:4.0
+FROM nodesource/node:5.10.0
 
 ADD package.json package.json
-RUN npm install
+RUN npm install --production
 ADD . .
 
 
-EXPOSE  3000
-CMD ["npm", "run", "start-dev"]
+EXPOSE  3100
+CMD ["npm", "run", "start"]
