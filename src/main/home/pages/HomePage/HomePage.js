@@ -54,7 +54,6 @@ export default class HomePage extends Component {
 
   loadLogs({type = '', size = 0} = {}) {
     this.props.loadLogsAction({size: size || this.props.query.size, type: type || this.props.query.type});
-    console.log('tot: ', {size: size || this.props.query.size, type: type || this.props.query.type});
   }
 
   render() {
@@ -66,6 +65,7 @@ export default class HomePage extends Component {
         <LogSearchForm
           onSubmit={::this.onSearchSubmit}
         />
+        <br/>
         <LogList
           logs={logs}
           query={query}
